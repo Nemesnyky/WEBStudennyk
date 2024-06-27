@@ -1,0 +1,6 @@
+@WEBStudennyk.Server_HostAddress = http://localhost:5139
+
+GET {{WEBStudennyk.Server_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

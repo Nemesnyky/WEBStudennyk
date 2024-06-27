@@ -1,0 +1,53 @@
+.students {
+  width: 900px;
+  margin: 0 auto;
+  font-family: Arial, sans-serif;
+
+  h2 {
+    font-size: 24px;
+
+  }
+.StudentsWrapper{
+  display: flex;
+  align-items: center;
+justify-content: space-between;
+}
+  p {
+    font-size: 14px;
+    color: #666;
+
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+
+    li {
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;
+      border-bottom: .0625rem solid #e0e0e0;
+      padding: 10px;
+
+      .initials {
+        display: inline-block;
+        width: 30px;
+        height: 30px;
+        line-height: 30px;
+        border-radius: 50%;
+        text-align: center;
+        margin-right: 10px;
+        color: white;
+
+        &.brown { background-color: brown; }
+        &.red { background-color: red; }
+        &.orange { background-color: orange; }
+        &.blue { background-color: blue; }
+        &.green { background-color: green; }
+        &.cyan { background-color: cyan; }
+        &.purple { background-color: purple; }
+        &.gray { background-color: gray; }
+      }
+    }
+  }
+}
