@@ -18,6 +18,9 @@ builder.Services.AddAuthentication()
 // Add Authorization
 builder.Services.AddAuthorizationBuilder();
 
+
+
+
 // Configure DbContext
 builder.Services.AddDbContext<IdentityContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
@@ -27,6 +30,7 @@ builder.Services.AddIdentityCore<User>()
     .AddApiEndpoints();
 
 // Додаємо політику CORS
+// ToDo: можна буде прибрати так як можна налаштовувати проксі в vite.config.js
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowSpecificOrigin",

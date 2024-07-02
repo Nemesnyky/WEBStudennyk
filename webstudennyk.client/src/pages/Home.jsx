@@ -1,9 +1,7 @@
-
-
 export function Home() {
   return (
     <div>
-<h2>htllo</h2>
+      <h2>hello</h2>
     </div>
   );
 }

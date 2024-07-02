@@ -1,65 +1,86 @@
 ﻿.Navbar {
-    height: 70px;
-
-    background-color: inherit;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0px 32px;
-
+  height: 70px;
+  background-color: inherit;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 32px;
 }
 
 .UserProfile {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 .ProfileIconWrapper {
-    position: relative;
+  position: relative;
 }
 
 .ProfileIcon {
-    position: relative;
-    width: 40px;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  position: relative;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .ProfileIcon img {
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
 }
 
 .Ellipse {
-    position: absolute;
-    width: 40px;
-    height: 40px;
-    border: 4px solid #fff;
-    box-shadow: 0px 0px 5px 0px #c5c5c5;
-    background: #c4c4c4;
-    border-radius: 50%;
-
-    z-index: -1; // Ensure the ellipse is behind the image
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  border: 4px solid #fff;
+  box-shadow: 0px 0px 5px 0px #c5c5c5;
+  background: #c4c4c4;
+  border-radius: 50%;
+  z-index: -1; // Ensure the ellipse is behind the image
 }
-.TimeWrapper{
-    position: static;
 
-height: 22px;
-display: flex;
-
-justify-content: center;
-
-padding: 0px;
-gap:19px;
+.TimeWrapper {
+  position: static;
+  height: 22px;
+  display: flex;
+  justify-content: center;
+  padding: 0px;
+  gap: 19px;
 }
-.Icon{
-    color:black;
 
+.Icon {
+  color: black;
 }
-.active{
-    color:red;
+
+.active {
+  color: red;
+}
+
+.menuList {
+  //   box-shadow: 0px 0px 5px 0px #c5c5c5;
+
+  opacity: 0;
+  visibility: hidden;
+  margin: 0;
+  position: absolute;
+  transform: translate(1px, 47px);
+  list-style-type: none;
+  padding: 0;
+  transition: opacity 0.2s ease-in-out, visibility 0.2s ease-in-out;
+}
+
+.ProfileIcon:hover > .menuList {
+  visibility: visible;
+  opacity: 1;
+  padding: 2px;
+}
+
+.ProfileIconWrapper:hover .menuList,
+.ProfileIconWrapper .menuList:hover {
+  visibility: visible;
+  opacity: 1;
 }
