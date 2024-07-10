@@ -1,50 +1,58 @@
 import React, { useEffect, useState } from "react";
 
 export function UserProfile() {
-  const [userName, setUserName] = useState("");
-  const [loading, setLoading] = useState(true);
+    const [userProfile, setUserProfile] = useState(null);
+    const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
-    const fetchUserName = async () => {
-      const token = localStorage.getItem("accessToken");
+    useEffect(() => {
+        const fetchUserProfile = async () => {
+            const token = localStorage.getItem("accessToken");
 
-      if (!token) {
-        console.error("Access token not found");
-        setLoading(false);
-        return;
-      }
+            if (!token) {
+                console.error("Access token not found");
+                setLoading(false);
+                return;
+            }
 
-      try {
-        const response = await fetch("/UserProfile", {
-          method: "GET",
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
-        });
+            try {
+                const response = await fetch("/UserProfile", {
+                    method: "GET",
+                    headers: {
+                        Authorization: `Bearer ${token}`,
+                    },
+                });
 
-        if (response.ok) {
-          const name = await response.text();
-          setUserName(name);
-        } else {
-          console.error("Failed to fetch user name:", response.statusText);
-        }
-      } catch (error) {
-        console.error("Error fetching user name:", error);
-      } finally {
-        setLoading(false);
-      }
-    };
+                if (response.ok) {
+                    const profile = await response.json();
+                    setUserProfile(profile);
+                } else {
+                    console.error("Failed to fetch user profile:", response.statusText);
+                }
+            } catch (error) {
+                console.error("Error fetching user profile:", error);
+            } finally {
+                setLoading(false);
+            }
+        };
 
-    fetchUserName();
-  }, []);
+        fetchUserProfile();
+    }, []);
 
-  if (loading) {
-    return <div>Loading...</div>;
-  }
+    if (loading) {
+        return <div>Loading...</div>;
+    }
 
-  return (
-    <div>
-      <h2>Hello, {userName}</h2>
-    </div>
-  );
+    if (!userProfile) {
+        return <div>Error loading profile</div>;
+    }
+
+    return (
+        <div>
+            <h2>Hello, {userProfile.userName}</h2>
+            <img src={userProfile.photoUrl} alt="User Photo" />
+            <p>Email: {userProfile.email}</p>
+            <p>Phone: {userProfile.phoneNumber}</p>
+            <p>Biography: {userProfile.biography}</p>
+        </div>
+    );
 }

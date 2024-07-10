@@ -18,6 +18,8 @@ import { Students } from "./pages/Students.jsx";
 import { Tasks } from "./pages/Tasks.jsx";
 import Register from "./pages/Register.jsx";
 import Login from "./pages/Login.jsx";
+import UsersList from "./pages/UsersList";
+import UserForm from "./pages/UserForm";
 
 // layouts
 import RootLayout from "./layouts/RootLayout";
@@ -35,6 +37,9 @@ const router = createBrowserRouter(
         <Route path="register" element={<Register />} />
         <Route path="login" element={<Login />} />
         <Route path="userprofile" element={<UserProfile />} />
+        <Route path="userlist" element={<UsersList />} />
+        <Route path="userform" element={<UserForm />} />
+        <Route path="userform/:id" element={<UserForm />} />
 
         {/* <Route path="help" element={<HelpLayout />}>
         <Route path="faq" element={<Faq />} />

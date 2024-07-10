@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using WEBStudennyk.Server.Data;
+using WEBStudennyk.Server.Controllers;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -18,11 +19,12 @@ builder.Services.AddAuthentication()
 // Add Authorization
 builder.Services.AddAuthorizationBuilder();
 
-
-
-
-// Configure DbContext
+// Configure Identity DbContext
 builder.Services.AddDbContext<IdentityContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+// Configure your application DbContext
+builder.Services.AddDbContext<WebstudennykContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 builder.Services.AddIdentityCore<User>()
@@ -30,7 +32,6 @@ builder.Services.AddIdentityCore<User>()
     .AddApiEndpoints();
 
 // Додаємо політику CORS
-// ToDo: можна буде прибрати так як можна налаштовувати проксі в vite.config.js
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowSpecificOrigin",
@@ -45,7 +46,6 @@ builder.Services.AddCors(options =>
 var app = builder.Build();
 
 app.MapIdentityApi<User>();
-
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
@@ -62,5 +62,7 @@ app.UseCors("AllowSpecificOrigin");
 app.MapControllers();
 
 app.MapFallbackToFile("/index.html");
+
+//app.MapAspNetUserEndpoints();
 
 app.Run();

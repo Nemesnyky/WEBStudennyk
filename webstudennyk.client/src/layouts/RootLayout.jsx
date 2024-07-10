@@ -21,6 +21,7 @@ export default function RootLayout() {
             <NavLink to="tasks">Завдання</NavLink>
             <NavLink to="students">Студенти</NavLink>
             <NavLink to="KNU">KNU</NavLink>
+            <NavLink to="userlist">Користувачі</NavLink>
           </div>
           <NavLink to="userprofile">
             <div className="UserProfile">
