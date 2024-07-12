@@ -11,7 +11,7 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-/* width: 100%; */
+  /* width: 100%; */
 }
 
 a {
@@ -35,7 +35,22 @@ h1 {
   font-size: 3.2em;
   line-height: 1.1;
 }
-
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul[class],
+ol[class],
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
 button {
   border-radius: 8px;
   border: 1px solid transparent;
@@ -79,7 +94,7 @@ header nav h1 {
   margin-right: auto;
   border-bottom: 3px solid var(--primary);
 }
-header nav a{
+header nav a {
   text-decoration: none;
   padding: 6px;
   border-radius: 4px;

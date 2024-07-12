@@ -1,0 +1,39 @@
+.ListWrapper {
+  margin: 0 auto;
+  max-width: 1200px;
+}
+.List {
+  display: flex;
+  width: 100%;
+}
+.UserPhotoWrapper {
+  width: 200px;
+  height: 200px;
+  background-color: black;
+}
+.UserPhoto {
+  width: 200px;
+  height: 200px;
+}
+.TextWrapper {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.bioWrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-left: 20px;
+  gap: 10px;
+}
+.viewerWrapper {
+  display: flex;
+  justify-content: space-between;
+}
+.Viewer > p {
+  margin-right: 20px;
+}
+.Viewer {
+  display: flex;
+}
