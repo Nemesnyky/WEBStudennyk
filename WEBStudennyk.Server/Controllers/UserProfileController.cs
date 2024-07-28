@@ -17,14 +17,14 @@ public class UserProfileController : ControllerBase
         _context = context;
     }
     [HttpGet]
-    [Authorize]
+
     public async Task<IActionResult> Get()
     {
         var user = await _userManager.GetUserAsync(User);
 
         if (user == null)
         {
-            return NotFound($"Користувач з ID '{_userManager.GetUserId(User)}' не знайдений.");
+            return NotFound($"пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ ID '{_userManager.GetUserId(User)}' пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ.");
         }
 
         var photo = await _context.Photos.FirstOrDefaultAsync(p => p.Id == user.PhotoUrlId);

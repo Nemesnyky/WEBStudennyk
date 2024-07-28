@@ -13,8 +13,14 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 // Add Authentication
-builder.Services.AddAuthentication()
-    .AddBearerToken(IdentityConstants.BearerScheme);
+builder.Services.AddAuthentication(options =>
+{
+    options.DefaultScheme = IdentityConstants.ApplicationScheme;
+    options.DefaultAuthenticateScheme = IdentityConstants.ApplicationScheme;
+    options.DefaultSignInScheme = IdentityConstants.ApplicationScheme;
+})
+.AddCookie(IdentityConstants.ApplicationScheme)
+.AddBearerToken(IdentityConstants.BearerScheme);
 
 // Add Authorization
 builder.Services.AddAuthorizationBuilder();
@@ -56,13 +62,13 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
+app.UseAuthentication();
+
 // Використовуємо політику CORS
 app.UseCors("AllowSpecificOrigin");
 
 app.MapControllers();
 
 app.MapFallbackToFile("/index.html");
-
-//app.MapAspNetUserEndpoints();
 
 app.Run();

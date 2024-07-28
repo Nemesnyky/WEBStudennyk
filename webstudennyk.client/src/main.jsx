@@ -21,6 +21,8 @@ import Login from "./pages/Login.jsx";
 import UsersList from "./pages/UsersList";
 import UserForm from "./pages/UserForm";
 
+import LoginPage from "./pages/LoginPage";
+
 // layouts
 import RootLayout from "./layouts/RootLayout";
 
@@ -40,6 +42,7 @@ const router = createBrowserRouter(
         <Route path="userlist" element={<UsersList />} />
         <Route path="userform" element={<UserForm />} />
         <Route path="userform/:id" element={<UserForm />} />
+        <Route path="qwqw" element={<LoginPage />} />
 
         {/* <Route path="help" element={<HelpLayout />}>
         <Route path="faq" element={<Faq />} />
@@ -56,5 +59,9 @@ ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <RouterProvider router={router} />
     {/* <App /> */}
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    ></link>
   </React.StrictMode>
 );

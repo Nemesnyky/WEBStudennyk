@@ -22,6 +22,7 @@ export default function RootLayout() {
             <NavLink to="students">Студенти</NavLink>
             <NavLink to="KNU">KNU</NavLink>
             <NavLink to="userlist">Користувачі</NavLink>
+            <NavLink to="qwqw">dwdwwd</NavLink>
           </div>
           <NavLink to="userprofile">
             <div className="UserProfile">
@@ -29,7 +30,7 @@ export default function RootLayout() {
                 <div className="ProfileIcon">
                   <div className="Ellipse"></div>
                   <img
-                    src="https://i.postimg.cc/JnsSvVvV/image.png"
+                    src="https://i.pinimg.com/564x/9f/05/5a/9f055afdc2f7255a5c9bad2aa6ace84d.jpg"
                     alt="Profile"
                   />
                   <ul className="menuList">
