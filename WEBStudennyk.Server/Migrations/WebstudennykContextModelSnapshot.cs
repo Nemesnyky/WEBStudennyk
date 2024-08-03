@@ -10,8 +10,8 @@ using WEBStudennyk.Server.Data;
 
 namespace WEBStudennyk.Server.Migrations
 {
-    [DbContext(typeof(IdentityContext))]
-    partial class IdentityContextModelSnapshot : ModelSnapshot
+    [DbContext(typeof(WebstudennykContext))]
+    partial class WebstudennykContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)
         {

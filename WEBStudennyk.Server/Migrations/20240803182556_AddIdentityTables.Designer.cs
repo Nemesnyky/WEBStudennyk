@@ -11,9 +11,9 @@ using WEBStudennyk.Server.Data;
 
 namespace WEBStudennyk.Server.Migrations
 {
-    [DbContext(typeof(IdentityContext))]
-    [Migration("20240627103140_createTable")]
-    partial class createTable
+    [DbContext(typeof(WebstudennykContext))]
+    [Migration("20240803182556_AddIdentityTables")]
+    partial class AddIdentityTables
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -166,6 +166,9 @@ namespace WEBStudennyk.Server.Migrations
                     b.Property<int>("AccessFailedCount")
                         .HasColumnType("int");
 
+                    b.Property<string>("Biography")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("ConcurrencyStamp")
                         .IsConcurrencyToken()
                         .HasColumnType("nvarchar(max)");
@@ -199,6 +202,9 @@ namespace WEBStudennyk.Server.Migrations
 
                     b.Property<bool>("PhoneNumberConfirmed")
                         .HasColumnType("bit");
+
+                    b.Property<int?>("PhotoUrlId")
+                        .HasColumnType("int");
 
                     b.Property<string>("SecurityStamp")
                         .HasColumnType("nvarchar(max)");

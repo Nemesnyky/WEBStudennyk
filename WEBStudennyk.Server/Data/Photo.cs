@@ -9,5 +9,5 @@ public partial class Photo
 
     public string PhotoUrl { get; set; } = null!;
 
-    public virtual ICollection<AspNetUser> AspNetUsers { get; set; } = new List<AspNetUser>();
+
 }
