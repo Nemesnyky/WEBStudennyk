@@ -1,20 +1,24 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using System;
+using System.Collections.Generic;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 
 namespace WEBStudennyk.Server.Data
 {
-    public class WEBStudennykContext : DbContext
+    public class WebstudennykContext : IdentityDbContext<User>
     {
-
-
-
-        public virtual DbSet<Task> Tasks { get; set; }
         //public virtual DbSet<Photo> Photos { get; set; }
 
-        public WEBStudennykContext(DbContextOptions<WEBStudennykContext> options)
+        public WebstudennykContext(DbContextOptions options)
             : base(options)
         {
-
+        }
+        protected override void OnModelCreating(ModelBuilder builder)
+        {
+            base.OnModelCreating(builder);
         }
 
     }
+
 }
+

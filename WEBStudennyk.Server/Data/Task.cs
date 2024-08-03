@@ -14,6 +14,4 @@ public partial class Task
 
     public string? UserId { get; set; }
 
-    public IdentityUser User { get; set; }
-
 }
