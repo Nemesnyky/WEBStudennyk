@@ -15,7 +15,7 @@ builder.Services.AddDbContext<WebstudennykContext>(opts =>
     opts.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 
-builder.Services.AddIdentity<User, IdentityRole>(opt =>
+builder.Services.AddIdentity<User, Role>(opt =>
 {
     opt.Password.RequiredLength = 7;
     opt.Password.RequireDigit = false;

@@ -38,6 +38,9 @@ namespace WEBStudennyk.Server.Controllers
 
                 return BadRequest(new RegistrationResponseDto { Errors = errors });
             }
+
+            await _userManager.AddToRoleAsync(user, "Visitor");
+
             return StatusCode(201);
         }
         [HttpPost("authenticate")]
@@ -48,8 +51,8 @@ namespace WEBStudennyk.Server.Controllers
 
                 return Unauthorized(new AuthResponseDto { ErrorMessage = "Invalid Authentication" });
 
-
-            var token = _jwtHandler.CreateToken(user);
+            var roles = await _userManager.GetRolesAsync(user);
+            var token = _jwtHandler.CreateToken(user, roles);
 
             return Ok(new AuthResponseDto { IsAuthSuccessful = true, Token = token });
         }
