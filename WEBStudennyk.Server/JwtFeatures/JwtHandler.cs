@@ -17,10 +17,10 @@ namespace WEBStudennyk.Server.JwtFeatures
             _jwtSettings = _configuration.GetSection("JWTSettings");
         }
 
-        public string CreateToken(User user)
+        public string CreateToken(User user, IList<string> roles)
         {
             var signningCredentials = GetSigningCredentials();
-            var clims = GetClaims(user);
+            var clims = GetClaims(user, roles);
             var tokenOptions = GenerateTokenOptions(signningCredentials, clims);
 
             return new JwtSecurityTokenHandler().WriteToken(tokenOptions);
@@ -33,12 +33,17 @@ namespace WEBStudennyk.Server.JwtFeatures
             return new SigningCredentials(secret, SecurityAlgorithms.HmacSha256);
         }
 
-        private List<Claim> GetClaims(User user)
+        private List<Claim> GetClaims(User user, IList<string> roles)
         {
             var claims = new List<Claim>
             {
                 new Claim(ClaimTypes.Name, user.UserName)
             };
+
+            foreach (var role in roles)
+            {
+                claims.Add(new Claim(ClaimTypes.Role, role));
+            }
 
             return claims;
         }

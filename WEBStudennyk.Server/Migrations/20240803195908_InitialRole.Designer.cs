@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using WEBStudennyk.Server.Data;
 
@@ -11,9 +12,11 @@ using WEBStudennyk.Server.Data;
 namespace WEBStudennyk.Server.Migrations
 {
     [DbContext(typeof(WebstudennykContext))]
-    partial class WebstudennykContextModelSnapshot : ModelSnapshot
+    [Migration("20240803195908_InitialRole")]
+    partial class InitialRole
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

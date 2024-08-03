@@ -19,6 +19,7 @@ namespace WEBStudennyk.Server.Controllers
             _logger = logger;
         }
         [Authorize]
+        [Authorize(Roles = "Admin")]
         [HttpGet(Name = "GetWeatherForecast")]
         public IEnumerable<WeatherForecast> Get()
         {
