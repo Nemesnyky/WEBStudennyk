@@ -9,7 +9,6 @@ namespace WEBStudennyk.Server.Data
     public class WebstudennykContext : IdentityDbContext<User, Role, string>
 
     {
-        //public virtual DbSet<Photo> Photos { get; set; }
 
         public WebstudennykContext(DbContextOptions options)
             : base(options)
@@ -18,8 +17,16 @@ namespace WEBStudennyk.Server.Data
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);
+
+            //builder.Entity<User>()
+            //    .HasOne(u => u.Photo)
+            //    .WithOne()
+            //    .HasForeignKey<User>(u => u.PhotoUrlId);
+
             builder.ApplyConfiguration(new RoleConfiguration());
         }
+
+        public DbSet<Photo> Photos { get; set; }
 
     }
 

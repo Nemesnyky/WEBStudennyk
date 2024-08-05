@@ -6,6 +6,8 @@ namespace WEBStudennyk.Server.Data
     {
         public int? PhotoUrlId { get; set; }
 
+        public Photo? PhotoUrl { get; set; }
+
         public string? Biography { get; set; }
 
     }
