@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using WEBStudennyk.Server.Data;
 
@@ -11,9 +12,11 @@ using WEBStudennyk.Server.Data;
 namespace WEBStudennyk.Server.Migrations
 {
     [DbContext(typeof(WebstudennykContext))]
-    partial class WebstudennykContextModelSnapshot : ModelSnapshot
+    [Migration("20240804102444_BugFix")]
+    partial class BugFix
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -236,9 +239,6 @@ namespace WEBStudennyk.Server.Migrations
                     b.Property<bool>("PhoneNumberConfirmed")
                         .HasColumnType("bit");
 
-                    b.Property<int?>("PhotoUrlId")
-                        .HasColumnType("int");
-
                     b.Property<string>("SecurityStamp")
                         .HasColumnType("nvarchar(max)");
 
@@ -258,8 +258,6 @@ namespace WEBStudennyk.Server.Migrations
                         .IsUnique()
                         .HasDatabaseName("UserNameIndex")
                         .HasFilter("[NormalizedUserName] IS NOT NULL");
-
-                    b.HasIndex("PhotoUrlId");
 
                     b.ToTable("AspNetUsers", (string)null);
                 });
@@ -313,20 +311,6 @@ namespace WEBStudennyk.Server.Migrations
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-                });
-
-            modelBuilder.Entity("WEBStudennyk.Server.Data.User", b =>
-                {
-                    b.HasOne("WEBStudennyk.Server.Data.Photo", "PhotoUrl")
-                        .WithMany("Users")
-                        .HasForeignKey("PhotoUrlId");
-
-                    b.Navigation("PhotoUrl");
-                });
-
-            modelBuilder.Entity("WEBStudennyk.Server.Data.Photo", b =>
-                {
-                    b.Navigation("Users");
                 });
 #pragma warning restore 612, 618
         }
