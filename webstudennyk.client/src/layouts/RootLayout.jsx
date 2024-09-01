@@ -16,7 +16,7 @@ export default function RootLayout() {
               alt=""
             /> */}
             {/* <img src="https://i.postimg.cc/pTMfj38Y/image.png" className="Icon" alt="" /> */}
-            <NavLink to="/">Стрічка</NavLink>
+            <NavLink to="/">Головна</NavLink>
             <NavLink to="schedule">Розклад</NavLink>
             <NavLink to="tasks">Завдання</NavLink>
             <NavLink to="students">Студенти</NavLink>

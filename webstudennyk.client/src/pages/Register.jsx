@@ -6,28 +6,43 @@ import "./Auth.scss";
 const Register = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
   const [errors, setErrors] = useState([]);
   const navigate = useNavigate();
-
   const handleRegister = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post("http://localhost:5139/register", {
-        email,
-        password,
-      });
+      const response = await axios.post(
+        "http://localhost:5139/api/accounts/register",
+        {
+          email,
+          password,
+          confirmPassword,
+        }
+      );
+
       console.log(response.data);
       setErrors([]);
       navigate("/userprofile");
     } catch (error) {
       console.error("Error registering:", error);
+
       if (error.response && error.response.data && error.response.data.errors) {
         const errorMessages = [];
-        for (const key in error.response.data.errors) {
-          if (error.response.data.errors[key]) {
-            errorMessages.push(...error.response.data.errors[key]);
+        if (
+          typeof error.response.data.errors === "object" &&
+          !Array.isArray(error.response.data.errors)
+        ) {
+          for (const key in error.response.data.errors) {
+            if (error.response.data.errors[key]) {
+              errorMessages.push(...error.response.data.errors[key]);
+            }
           }
         }
+        if (Array.isArray(error.response.data.errors)) {
+          errorMessages.push(...error.response.data.errors);
+        }
+
         setErrors(errorMessages);
       } else {
         setErrors(["Сталася невідома помилка."]);
@@ -53,6 +68,14 @@ const Register = () => {
             type="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
+          />
+        </label>
+        <label>
+          Підтвердіть пароль:
+          <input
+            type="password"
+            value={confirmPassword}
+            onChange={(e) => setConfirmPassword(e.target.value)}
           />
         </label>
         <button type="submit">Зареєструватися</button>

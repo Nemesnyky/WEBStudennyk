@@ -10,6 +10,8 @@ import App from "./App.jsx";
 import "./index.css";
 
 // pages
+import PostCreating from "./pages/PostCreating.jsx";
+
 import { Home } from "./pages/Home.jsx";
 import { UserProfile } from "./pages/UserProfile.jsx";
 import Schedule from "./pages/Schedule.jsx";
@@ -20,6 +22,9 @@ import Register from "./pages/Register.jsx";
 import Login from "./pages/Login.jsx";
 import UsersList from "./pages/UsersList";
 import UserForm from "./pages/UserForm";
+import Subject from "./pages/Subject.jsx";
+import CreateLecturer from "./pages/CreateLecturer.jsx";
+import Lecturer from "./pages/Lecturer.jsx";
 
 import LoginPage from "./pages/LoginPage";
 
@@ -43,6 +48,10 @@ const router = createBrowserRouter(
         <Route path="userform" element={<UserForm />} />
         <Route path="userform/:id" element={<UserForm />} />
         <Route path="qwqw" element={<LoginPage />} />
+        <Route path="subject" element={<Subject />} />
+        <Route path="postCreating" element={<PostCreating />} />
+        <Route path="createLecturer" element={<CreateLecturer />} />
+        <Route path="lecturer" element={<Lecturer />} />
 
         {/* <Route path="help" element={<HelpLayout />}>
         <Route path="faq" element={<Faq />} />
