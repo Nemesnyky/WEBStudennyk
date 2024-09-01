@@ -1,0 +1,148 @@
+.border {
+  border: 1px solid #e5e5e5;
+  border-radius: 4px;
+}
+.Text {
+  color: rgb(0, 0, 0);
+  font-family: Inter;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 17px;
+  letter-spacing: 0%;
+  text-align: left;
+  margin-left: 30px;
+  margin-top: 10px;
+}
+.Line {
+  border-top: 1px solid #e5e5e5;
+  margin-top: 10px;
+}
+.ListContainer {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: row;
+}
+.LeftSection {
+  width: 240px;
+  margin: 0 30px;
+}
+.LeftSection .mainImage {
+  width: auto;
+
+  margin-bottom: 15px;
+}
+.Visibility {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 5px;
+  padding: 14px 12px 14px 12px;
+}
+
+.real-checkbox {
+  width: 0;
+  height: 0;
+  opacity: 0;
+  position: absolute;
+  z-index: -1;
+}
+
+.custom-checkbox {
+  position: relative;
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border: 3px solid rgb(95, 99, 104);
+  border-radius: 4px;
+  margin-right: 5px;
+  vertical-align: sub;
+}
+.custom-checkbox::before {
+  content: "";
+  display: inline-block;
+
+  width: 13px;
+  height: 13px;
+  background-image: url("../assets/check.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  margin-top: 2px;
+  transition: 0.2s ease-in;
+}
+.real-checkbox:checked + .custom-checkbox::before {
+  transform: translate(-50%, -50%) scale(1);
+}
+.ContentText {
+  color: rgb(0, 0, 0);
+  font-family: Inter;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 17px;
+  letter-spacing: 0%;
+  text-align: left;
+}
+.IconImg {
+  content: "";
+  display: inline-block;
+  background-image: url("../assets/info.svg");
+  width: 18px;
+  height: 18px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  vertical-align: sub;
+  margin-left: 3px;
+}
+.ContentTextWrapper {
+  display: flex;
+  justify-content: space-between;
+}
+.RightSection {
+  margin-right: 30px;
+  width: 100%;
+}
+.purple {
+  color: #747bff;
+  cursor: pointer;
+}
+.Input {
+  padding: 0;
+  margin: 0;
+  border: none;
+  outline: none;
+  width: 100%;
+}
+.InputWrapper {
+  display: inline-block;
+  width: 100%;
+  box-sizing: border-box;
+  margin-top: 5px;
+  border: 1px solid rgb(220, 220, 220);
+  border-radius: 3px;
+  padding: 5px 10px;
+  margin-bottom: 15px;
+}
+.TextArea {
+  min-height: 150px;
+
+  width: 100%;
+  resize: none;
+}
+.ListWrapper .ButtonWrapper {
+  display: flex;
+  margin-top: 10px;
+  margin-bottom: 40px;
+  justify-content: flex-start;
+  margin-left: 30px;
+}
+.CreateBtn {
+  padding: 5px 10px 5px 10px;
+  background-color: #747bff;
+  color: white;
+  border-radius: 2px;
+  font-size: 14px;
+}

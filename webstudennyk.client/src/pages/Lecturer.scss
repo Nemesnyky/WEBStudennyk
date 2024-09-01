@@ -1,0 +1,246 @@
+.InsideContent {
+  padding: 15px;
+}
+.Title {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 19px;
+}
+.secondaryText {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 15px;
+  color: #c1c1c1;
+}
+.TopSection {
+  display: flex;
+  justify-content: space-between;
+}
+.followWrapper {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  margin: 9px 0;
+}
+.ratingWrapper {
+  flex-direction: column;
+  gap: 5px;
+}
+.rating {
+  margin-right: 0;
+}
+.rating-value {
+  font-family: Inter;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 19px;
+}
+.rating-count {
+  font-family: Inter;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 15px;
+}
+.Tabs {
+  width: 179px;
+  height: 40px;
+  display: flex;
+  justify-content: space-between;
+  margin-left: 30px;
+}
+.RightSection {
+  min-height: 260px;
+}
+// .ListWrapper > .border {
+//   border-bottom-left-radius: 0px;
+// }
+// .ListWrapper > .border {
+//   border-bottom-left-radius: 0px;
+// }
+.Inside {
+  margin-left: 0;
+}
+.TabButton {
+  padding: 0;
+  background-color: inherit;
+  cursor: pointer;
+  font-size: 14px;
+  width: 100%;
+  position: relative;
+}
+
+.TabButton.active1 {
+  color: #646cff;
+  border-radius: 4px 4px 0 0;
+  border: 1px solid #e5e5e5;
+  border-bottom-width: 0;
+  background-color: white;
+}
+.TabButton.active2 {
+  color: #646cff;
+  border-radius: 4px 4px 0 0;
+  border: 1px solid #e5e5e5;
+  border-bottom-width: 0;
+}
+.TabsSection .TabContent {
+  margin-top: 15px;
+  padding: 12px;
+  display: flex;
+  gap: 17px;
+  overflow: hidden;
+
+  scroll-behavior: smooth;
+}
+.TabsSection {
+  margin: 0 30px;
+  position: relative;
+  border-radius: 4px;
+  margin-bottom: 90px;
+}
+
+.TabsSection.no-top-left-radius {
+  border-top-left-radius: 0;
+}
+
+.TabButton.active1::after {
+  content: "";
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: rgb(255, 255, 255);
+  z-index: 100;
+}
+.TabButton.active2::after {
+  content: "";
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: rgb(255, 255, 255);
+  z-index: 100;
+}
+.TabsWrapper {
+  margin-top: -20px;
+}
+.all {
+  width: 100%;
+}
+.photoCaption {
+  font-family: Inter;
+  font-size: 9px;
+  font-weight: 700;
+  line-height: 8px;
+  width: 72px;
+  overflow: hidden;
+}
+.imgWrapper {
+  display: flex;
+  gap: 3px;
+  flex-direction: column;
+  width: 72px;
+}
+.mediaSliderArrows {
+  display: flex;
+  gap: 1063px;
+  cursor: pointer;
+  position: absolute;
+  z-index: 2;
+  top: 38%;
+  left: 6px;
+}
+.mediaSliderArrows .material-symbols-outlined {
+  border-radius: 3px;
+
+  font-size: 33px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #d4d4d4;
+  width: 32px;
+  height: 32px;
+}
+.mediaSliderArrows .material-symbols-outlined:hover {
+  background-color: #a3a3a3;
+}
+.midle {
+  margin: 10px 0;
+  margin-left: 9px;
+}
+.TabsSection .Comments {
+  display: block;
+}
+.commentHead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #5f6368;
+}
+.commentHead .editors {
+  max-width: none;
+}
+.mark {
+  font-size: 9px;
+  font-weight: 700;
+  color: #3c47ce;
+  padding: 0 6px;
+  background-color: rgba(60, 91, 206, 0.16);
+  border-radius: 2px;
+}
+.teamEditorsName {
+  display: flex;
+  gap: 6px;
+}
+.commentContent {
+  margin: 9px 0 9px;
+
+  word-wrap: break-word;
+  word-break: break-word;
+}
+.commentControl {
+  display: flex;
+}
+.CommentFeedback {
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.CommentFeedbackWrapper.Like {
+  color: #14ca26;
+}
+
+.CommentFeedbackWrapper.Dislike {
+  color: #ce3c3c;
+}
+
+.commentControl {
+  display: flex;
+  gap: 10px;
+}
+.CommentFeedbackWrapper {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  color: #5f6368;
+}
+.CommentFeedbackWrapper .material-symbols-outlined {
+  font-size: 15px;
+}
+.material-symbols-outlined .MoreVert {
+  font-size: 20px;
+}
+.commentBody {
+  padding: 15px 8px;
+}
+.commentChildren {
+  position: relative;
+  margin-left: 8px;
+  padding-left: 17px;
+  border-left: 1px solid #e5e5e5;
+  background: #fff;
+}
