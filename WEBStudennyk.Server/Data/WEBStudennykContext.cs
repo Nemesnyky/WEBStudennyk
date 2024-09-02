@@ -27,6 +27,13 @@ namespace WEBStudennyk.Server.Data
         }
 
         public DbSet<Photo> Photos { get; set; }
+        public DbSet<Group> Groups { get; set; }
+        public DbSet<Schedule> Schedules { get; set; }
+        public DbSet<Student> Students { get; set; }
+        public DbSet<StudentSubGroup> StudentSubGroups { get; set; }
+        public DbSet<SubGroup> SubGroups { get; set; }
+        public DbSet<Subject> Subjects { get; set; }
+        public DbSet<Teacher> Teachers { get; set; }
 
     }
 
